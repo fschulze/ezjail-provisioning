@@ -1,0 +1,5 @@
+---
+jails_pkg_url: "pkg+http://pkg.freeBSD.org/${ABI}/latest"
+ipnat_jail_networks:
+    - 10.0.0.0/8
+ipnat_rules: []
