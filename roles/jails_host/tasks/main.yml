@@ -29,6 +29,7 @@
 - name: Setup ipnat.rules
   template: src=ipnat.rules dest=/etc/ipnat.rules
   notify: restart network
+  tags: ipnat_rules
 
 - name: Enable gateway in rc.conf
   lineinfile: dest=/etc/rc.conf regexp=^gateway_enable= line=gateway_enable=\"YES\"
