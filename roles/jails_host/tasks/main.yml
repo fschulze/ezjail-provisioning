@@ -3,6 +3,8 @@
   lineinfile: dest=/etc/ssh/sshd_config regexp=^ListenAddress line='ListenAddress {{ ansible_default_ipv4.address }}'
   notify: restart sshd
 
+- { include: ntpd.yml, tags: ntpd }
+
 - name: Enable ipfilter in rc.conf
   lineinfile: dest=/etc/rc.conf regexp=^ipfilter_enable= line=ipfilter_enable=\"YES\"
   notify: restart network
